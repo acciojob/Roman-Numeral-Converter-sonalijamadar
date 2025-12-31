@@ -12,6 +12,23 @@ function convertToRoman(num) {
   //your code here
 
 	let result = "";
+
+	const special = {
+		900: "CM",
+        400: "CD",
+        90: "XC",
+        40: "XL",
+        9: "IX",
+        4: "IV"
+	};
+	for(let value in special){
+		while (num >= value) {
+			result += special[value];
+			num -= value;
+		}
+	}
+
+	
 	for(let i = 0; i < Object.keys(obj).length; i++){
 	let roman = obj[i][0];
 	let value = obj[i][1];
