@@ -21,9 +21,10 @@ function convertToRoman(num) {
         9: "IX",
         4: "IV"
 	};
-	for(let value in special){
+	for(let key in special){
+		let value = Number(key);
 		while (num >= value) {
-			result += special[value];
+			result += special[key];
 			num -= value;
 		}
 	}
